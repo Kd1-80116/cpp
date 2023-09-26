@@ -1,0 +1,75 @@
+/*Q3. Write a menu driven program for Student in CPP language. Create a class student with data
+members roll no, name and marks. Implement the following functions
+void initStudent();
+void printStudentOnConsole();
+void acceptStudentFromConsole();*/
+
+#include <iostream>
+using namespace std;
+class Student
+{
+       int rollno;
+       string name;
+       int mark;
+
+       // Student(){
+       // this->rollno=112;
+       // this->name="a";
+       //  this->mark=800;
+       // }
+public:
+       void initstudent()
+       {
+              rollno = 12;
+              name = "anil";
+              mark = 100;
+       }
+       void acceptStudent()
+       {
+              cout << "enter the rollno,name,mark";
+              cin >> this->rollno >> this->name >> this->mark;
+       }
+       void printStudent()
+       {
+              cout << "student" << this->rollno << ":" << this->name << ":" << this->mark << endl;
+       }
+
+};  enum Emenu {
+     EXIT,
+     INITSTUDENT,
+     ACCEPTSTUDENT,
+     PRINTSTUDENT,
+
+};
+Emenu menu (){
+    int choice;
+    cout<<"0.EXIT"<<endl;
+    cout<<"1.initstudent"<<endl;
+    cout<<"2.acceptstudent"<<endl;
+    cout<<"3.printstudent"<<endl;
+    cout<<"enter choice="<<endl;
+    cin>>choice;
+    return Emenu(choice);
+}
+
+int main()
+{
+ Student e1 ;
+Emenu choice;
+       while((choice=menu())!=EXIT){
+     switch(choice){
+case INITSTUDENT: e1.initstudent();
+  break;
+  case ACCEPTSTUDENT:e1.acceptStudent();
+  break;
+  case PRINTSTUDENT:e1.printStudent();
+  break;
+  default:
+  cout<<"u enter wrong choice";
+  break;
+}
+
+       }
+
+       
+}
